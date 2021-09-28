@@ -1,19 +1,11 @@
-using System.ComponentModel;
 
 namespace hogwartsApi.Domain.Models
 {
-    public enum EHouse : byte
+    public class EHouse
     {
-        [Description("Gryffindor")]
-        Gryffindor = 1,
-
-        [Description("Ravenclaw")]
-        Ravenclaw = 2,
-
-        [Description("Hofflepuff")]
-        Hufflepuff = 3,
-
-        [Description("Slytherin")]
-        Slytherin = 4,
+        public static string Gryffindor { get { return "Gryffindor"; } }
+        public static string Slytherin{ get { return "Slytherin"; } }
+        public static string Ravenclaw{ get { return "Ravenclaw"; } }
+        public static string Hofflepuff{ get { return "Hofflepuff"; } }
     }
 }

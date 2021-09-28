@@ -42,7 +42,7 @@ namespace hogwartsApi.Resources
         /// A hogwarts house
         /// </summary>
         [Required]
-        [EnumDataType(typeof(EHouse), ErrorMessage = "Must select a valid house")]
-        public EHouse House { get; set; }
+        [DataType(DataType.Text)]
+        public string House { get; set; }
     }
 }

@@ -1,5 +1,3 @@
-using hogwartsApi.Domain.Models;
-
 namespace hogwartsApi.Resources
 {
     public class ApplicationResource
@@ -9,6 +7,6 @@ namespace hogwartsApi.Resources
         public string Lastname { get; set; }
         public int Age { get; set; }
         public long Identification { get; set; }
-        public EHouse House { get; set; }
+        public string House { get; set; }
     }
 }

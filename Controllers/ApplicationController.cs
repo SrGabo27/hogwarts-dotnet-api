@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -42,6 +43,9 @@ namespace hogwartsApi.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
+
+            if (resource.House != EHouse.Gryffindor && resource.House != EHouse.Ravenclaw && resource.House != EHouse.Slytherin && resource.House != EHouse.Hofflepuff)
+                return BadRequest("House must be a valid house");
 
             var application = _mapper.Map<SaveApplicationResource, Application>(resource);
             var result = await _applicationService.SaveAsync(application);

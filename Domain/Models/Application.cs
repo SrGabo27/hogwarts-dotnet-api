@@ -7,6 +7,6 @@ namespace hogwartsApi.Domain.Models
         public string Lastname { get; set; }
         public long Identification { get; set; }
         public int Age { get; set; }
-        public EHouse House { get; set; }
+        public string House { get; set; }
     }
 }
