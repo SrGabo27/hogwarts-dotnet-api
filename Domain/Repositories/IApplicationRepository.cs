@@ -10,6 +10,6 @@ namespace hogwartsApi.Domain.Repositories
         Task AddAsync(Application application);
         Task<Application> FindByIdAsync(int id);
         void Update(Application application);
-		void Remove(Application application);
+        void Remove(Application application);
     }
 }

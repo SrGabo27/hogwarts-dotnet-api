@@ -1,6 +1,7 @@
 using AutoMapper;
-using hogwartsApi.Resources;
+using hogwartsApi.Extensions;
 using hogwartsApi.Domain.Models;
+using hogwartsApi.Resources;
 
 namespace hogwartsApi.Mapping
 {
@@ -8,7 +9,9 @@ namespace hogwartsApi.Mapping
     {
         public ModelToResourceProfile()
         {
-            CreateMap<Application, ApplicationResource>();
+            CreateMap<Application, ApplicationResource>()
+              .ForMember(src => src.House,
+                         opt => opt.MapFrom(src => src.House.ToDescriptionString()));
         }
     }
 }

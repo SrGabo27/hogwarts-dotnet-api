@@ -9,6 +9,7 @@ using hogwartsApi.Extensions;
 
 namespace hogwartsApi.Controllers
 {
+    [Produces("application/json")]
     [Route("/api/application")]
     public class ApplicationController : Controller
     {
@@ -21,6 +22,9 @@ namespace hogwartsApi.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Get all the applications.
+        /// </summary>
         [HttpGet]
         public async Task<IEnumerable<ApplicationResource>> GetAllAsync()
         {
@@ -30,6 +34,9 @@ namespace hogwartsApi.Controllers
             return resources;
         }
 
+        /// <summary>
+        /// Create a new student application.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveApplicationResource resource)
         {
@@ -47,6 +54,10 @@ namespace hogwartsApi.Controllers
             return Ok(applicationResource);
         }
 
+
+        /// <summary>
+        /// Update a new student application.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveApplicationResource resource)
         {
@@ -63,16 +74,19 @@ namespace hogwartsApi.Controllers
             return Ok(applicationResource);
         }
 
-		[HttpDelete("{id}")]
-public async Task<IActionResult> DeleteAsync(int id)
-{
-	var result = await _applicationService.DeleteAsync(id);
+        /// <summary>
+        /// Delete a new student application.
+        /// </summary>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var result = await _applicationService.DeleteAsync(id);
 
-	if (!result.Success)
-		return BadRequest(result.Message);
+            if (!result.Success)
+                return BadRequest(result.Message);
 
-	var applicationResource = _mapper.Map<Application, ApplicationResource>(result.Application);
-	return Ok(applicationResource);
-}
+            var applicationResource = _mapper.Map<Application, ApplicationResource>(result.Application);
+            return Ok(applicationResource);
+        }
     }
 }

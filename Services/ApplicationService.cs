@@ -61,25 +61,25 @@ namespace hogwartsApi.Services
             }
         }
 
-		public async Task<ApplicationResponse> DeleteAsync(int id)
-{
-	var existingApplication = await _applicationRepository.FindByIdAsync(id);
+        public async Task<ApplicationResponse> DeleteAsync(int id)
+        {
+            var existingApplication = await _applicationRepository.FindByIdAsync(id);
 
-	if (existingApplication == null)
-		return new ApplicationResponse("Application not found.");
+            if (existingApplication == null)
+                return new ApplicationResponse("Application not found.");
 
-	try
-	{
-		_applicationRepository.Remove(existingApplication);
-		await _unitOfWork.CompleteAsync();
+            try
+            {
+                _applicationRepository.Remove(existingApplication);
+                await _unitOfWork.CompleteAsync();
 
-		return new ApplicationResponse(existingApplication);
-	}
-	catch (Exception ex)
-	{
-		// Do some logging stuff
-		return new ApplicationResponse($"An error occurred when deleting the application: {ex.Message}");
-	}
-}
+                return new ApplicationResponse(existingApplication);
+            }
+            catch (Exception ex)
+            {
+                // Do some logging stuff
+                return new ApplicationResponse($"An error occurred when deleting the application: {ex.Message}");
+            }
+        }
     }
 }

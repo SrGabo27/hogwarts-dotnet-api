@@ -33,9 +33,9 @@ namespace hogwartsApi.Persistence.Repositories
             _context.Applications.Update(application);
         }
 
-		public void Remove(Application application)
-{
-	_context.Applications.Remove(application);
-}
+        public void Remove(Application application)
+        {
+            _context.Applications.Remove(application);
+        }
     }
 }

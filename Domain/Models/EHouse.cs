@@ -4,16 +4,16 @@ namespace hogwartsApi.Domain.Models
 {
     public enum EHouse : byte
     {
-        [Description("Gry")]
+        [Description("Gryffindor")]
         Gryffindor = 1,
 
-        [Description("Rav")]
+        [Description("Ravenclaw")]
         Ravenclaw = 2,
 
-        [Description("Hof")]
+        [Description("Hofflepuff")]
         Hufflepuff = 3,
 
-        [Description("Sly")]
+        [Description("Slytherin")]
         Slytherin = 4,
     }
 }

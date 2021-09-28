@@ -10,7 +10,7 @@ namespace hogwartsApi.Domain.Services
         Task<IEnumerable<Application>> ListAsync();
         Task<ApplicationResponse> SaveAsync(Application application);
         Task<ApplicationResponse> UpdateAsync(int id, Application application);
-		Task<ApplicationResponse> DeleteAsync(int id);
+        Task<ApplicationResponse> DeleteAsync(int id);
     }
 }
 
