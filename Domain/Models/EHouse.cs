@@ -6,6 +6,6 @@ namespace hogwartsApi.Domain.Models
         public static string Gryffindor { get { return "Gryffindor"; } }
         public static string Slytherin{ get { return "Slytherin"; } }
         public static string Ravenclaw{ get { return "Ravenclaw"; } }
-        public static string Hofflepuff{ get { return "Hofflepuff"; } }
+        public static string Hufflepuff{ get { return "Hufflepuff"; } }
     }
 }

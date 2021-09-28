@@ -44,7 +44,7 @@ namespace hogwartsApi.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
 
-            if (resource.House != EHouse.Gryffindor && resource.House != EHouse.Ravenclaw && resource.House != EHouse.Slytherin && resource.House != EHouse.Hofflepuff)
+            if (resource.House != EHouse.Gryffindor && resource.House != EHouse.Ravenclaw && resource.House != EHouse.Slytherin && resource.House != EHouse.Hufflepuff)
                 return BadRequest("House must be a valid house");
 
             var application = _mapper.Map<SaveApplicationResource, Application>(resource);
