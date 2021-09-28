@@ -1,15 +1,22 @@
 ![Image of Yaktocat](https://i.pinimg.com/originals/c7/1c/b8/c71cb81fcd65b4f3b0bd824f26ef7e06.png)
 
-# Hogwarts Institutional Portal
+# Hogwarts Institutional Api
 
-Institutional portal of the Hogwarts School of Witchcraft and Wizardry.
+Institutional api for new student applications of the Hogwarts School of Witchcraft and Wizardry.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+This project was generated with dotnet version 5.0.205
 
-## Development server
+## Set up development server
 
-Run `yarn` for install dependencies.  
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `dotnet restore` for install dependencies.
+
+For the database set up, the [EF Core command-line tools](https://docs.microsoft.com/en-us/ef/core/cli/) must be installed.
+
+Run `dotnet ef database update` to create the Database and apply the initial migrations.
+
+Run `dotnet watch run` for a dev server. the main endpoint is `https://localhost:5001/api`. The app will automatically reload if you change any of the source files.
+
+Visit `https://localhost:5001/swagger/` for test the api thru Swagger interface
 
 ## Code scaffolding
 
@@ -28,18 +35,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 ├── services     # All the services of the system
 └── shared       # Contains the shared elements of the UI like the navbar or the footer
 ```
-
-## External libraries
-
-- UI
-  - [Bulma](https://bulma.io/documentation/)
-  - [Angular Material](https://material.angular.io/)
-- Alerts
-
-  - [IziToast](https://www.npmjs.com/package/ngx-izitoast)
-
-- Animations
-  - [AOS](https://michalsnik.github.io/aos/)
-- Calendar and Dates
-  - [Flatpickr](https://www.npmjs.com/package/angularx-flatpickr)
-  - [Moment.js](https://momentjs.com/docs/)
